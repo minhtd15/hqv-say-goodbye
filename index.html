@@ -17,17 +17,34 @@
     </div>
     <script src="script.js"></script>
     <script>
-        // Get the button element by its ID
-        var yesButton = document.getElementById('yesButton');
-      
-        // Add a click event listener to the button
-        yesButton.addEventListener('click', function() {
-          // Define the link to which you want to navigate
-          var link = 'https://viblo.asia/p/thuoc-tinh-position-trong-css-6J3ZggdqZmB';
-      
-          // Navigate to the link
-          window.location.href = link;
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the elements
+            var yesButton = document.getElementById('yesButton');
+            var gifElement = document.querySelector('.gif');
+        
+            // Add a click event listener to the "Yes" button
+            yesButton.addEventListener('click', function () {
+                // Replace the GIF with a video element
+                var videoElement = document.createElement('video');
+                videoElement.setAttribute('class', 'video');
+                videoElement.setAttribute('controls', 'controls');
+        
+                // Set the video source
+                var sourceElement = document.createElement('source');
+                sourceElement.setAttribute('src', 'ba.mp4'); // Replace with the actual path to your video
+                sourceElement.setAttribute('type', 'video/mp4');
+                videoElement.appendChild(sourceElement);
+        
+                // Replace the GIF with the video element
+                gifElement.replaceWith(videoElement);
+            });
         });
+        //var yesButton = document.getElementById('yesButton');
+      
+        //yesButton.addEventListener('click', function() {
+        //  var link = 'https://viblo.asia/p/thuoc-tinh-position-trong-css-6J3ZggdqZmB';
+        //  window.location.href = link;
+        //}); 
       </script>
 </body>
 </html>
